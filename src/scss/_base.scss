@@ -12,6 +12,20 @@ body {
   stroke: transparent;
   fill: currentColor;
 
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+
+    &:last-of-type {
+      margin-left: 1rem;
+      
+      @include mq(75rem) {
+        margin-left: 0;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
   &--small {
     width: 1.2rem;
     height: 1.2rem;
@@ -43,7 +57,6 @@ body {
   &--use {
     width: 1rem;
     height: 1rem;
-    margin-left: 1rem;
     margin-right: 0.3rem;
     color: $darkgray-text;
   }
@@ -53,14 +66,15 @@ body {
     height: 1rem;
     position: absolute;
     right: 1rem;
-    top: 50%;
+    top: 20px;
     transform: translateY(-50%);
 
     @include mq(60rem) {
       position: initial;
       vertical-align: middle;
       transform: initial;
-      margin-left: 0.5rem;
+      margin-left: -0.5rem;
+      margin-right: 0.5rem;
     }
   }
 }

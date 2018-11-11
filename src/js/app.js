@@ -27,13 +27,19 @@ import '../img/totolotek-thumb.jpg'
 const menuToggle = () => {
   const menuBtn = document.getElementById('menuBtn');
   const menuList = document.getElementById('menuList');
-  menuBtn.addEventListener('click', () => { menuList.classList.toggle('opened') })
+  menuBtn.addEventListener('click', () => { 
+    menuList.classList.toggle('opened')
+  })
 }
 
 const submenuToggle = () => {
   const submenuBtn = document.getElementById('submenuBtn');
   const submenuList = document.getElementById('submenuList');
-  submenuBtn.addEventListener('click', () => { submenuList.classList.toggle('opened') })
+  submenuBtn.addEventListener('click', (e) => {
+    if (window.innerWidth < 960 && e.target === submenuBtn) {
+      submenuList.classList.toggle('opened') 
+    }
+  })
 }
 
 const init = function() {
