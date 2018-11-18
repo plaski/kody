@@ -70,9 +70,14 @@
 
   &__desc {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     font-size: 0.8rem;
     margin-bottom: 1rem;
+    
+    @include mq(22rem) {
+      flex-direction: row;
+    }
 
     @include mq(75rem) {
       flex-direction: column;
@@ -89,6 +94,7 @@
 
   &__use {
     color: $darkgray-text;
+    white-space: nowrap;
   }
 
   &__gift {
