@@ -33,12 +33,15 @@ const menuToggle = () => {
 }
 
 const submenuToggle = () => {
-  const submenuBtn = document.getElementById('submenuBtn');
-  const submenuList = document.getElementById('submenuList');
-  submenuBtn.addEventListener('click', (e) => {
-    if (window.innerWidth < 960 && e.target === submenuBtn) {
-      submenuList.classList.toggle('opened') 
-    }
+  const submenuBtns = [...document.querySelectorAll('[data-submenuBtn]')];
+  submenuBtns.forEach(function(submenuBtn) {
+    submenuBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (window.innerWidth < 960 && e.target === submenuBtn) {
+        const submenuList = submenuBtn.parentElement;
+        submenuList.classList.toggle('opened'); 
+      }
+    })
   })
 }
 

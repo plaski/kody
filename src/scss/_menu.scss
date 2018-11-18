@@ -59,7 +59,7 @@
     }
     
     &.opened {
-      max-height: 300px;
+      max-height: 600px;
     }
     
     &--submenu {
@@ -114,10 +114,18 @@
     }
     
     &--open {
-      max-height: 42.1875px;
+      max-height: 2.625rem;
 
+      @include mq(60rem) {
+        max-height: initial;
+      }
+      
       &.opened {
         max-height: 13rem;
+        
+        @include mq(60rem) {
+          max-height: initial;
+        }
       }
       
       &:hover .menu__list--submenu {
