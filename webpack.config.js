@@ -57,6 +57,12 @@ module.exports = {
       hash: true,
       template: './src/index.html',
       filename: 'index.html'
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      hash: true,
+      template: './src/ranking.html',
+      filename: 'ranking.html'
     })
   ]
 };

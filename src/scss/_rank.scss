@@ -1,0 +1,165 @@
+.rank {
+  &__item {
+    background: $white-bg;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 1.25rem;
+    padding: 1rem;
+
+    @include mq(32rem) {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+  }
+
+  &__body {
+    margin: 0 auto;
+
+    @include mq(32rem) {
+      width: 200px;
+    }
+  }
+  
+  &__img {
+    max-height: 140px;
+  }
+
+  &__desc {
+
+    @include mq(32rem) {
+      width: calc(100% - 200px);
+      padding: 0 0 0.33rem 1.25rem;
+      text-align: left;
+    }
+    
+    @include mq(50rem) {
+      width: calc(100% - 490px);
+    }
+  }
+  
+  &__title {
+    margin-top: 0.75rem;
+    font-weight: 300;
+    color: $blue-text;
+
+    @include mq(32rem) {
+      margin-top: 0;
+    }
+  }
+  
+  &__text {
+    margin-top: 0.75rem;
+    color: $black-text;
+    font-weight: 500;
+    font-size: 1.25rem;
+  }
+  
+  &__subtext {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    
+    &--color {
+      color: $darkerblue-text;
+    }
+  }
+  
+  &__review {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mq(32rem) {
+      width: 200px;
+    }
+
+    @include mq(50rem) {
+      width: 150px;
+    }
+  }
+  
+  &__review-text {
+    margin-top: 1rem;
+    font-size: 0.66rem;
+    font-weight: 500;
+  }
+  
+  &__note {
+    margin-top: 0.75rem;
+    font-size: 2.75rem;
+    font-weight: 700;
+  }
+  
+  &__subnote {
+    font-size: 2.25rem;
+    font-weight: 500;
+  }
+  
+  &__review-button {
+    margin-top: 0.75rem;
+    border-radius: 8px;
+    background: $light-bg;
+    font-weight: 600;
+    font-size: 0.7rem;
+    display: inline-block;
+    text-align: center;
+    padding: 0.75rem;
+    transition: all .4s ease-in-out;
+    
+    &:hover {
+      background: $third-bg;
+      color: $white-text;
+    }
+  }
+  
+  &__offer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mq(32rem) {
+      padding-left: 1.25rem;
+      width: 140px;
+    }
+  }
+  
+  &__play-now {
+    margin-top: 1rem;
+    background: $yellow-bg;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    overflow: hidden;
+    
+    span {
+      display: block;
+      position: relative;
+      font-weight: 700;
+      color: $white-text;
+      transition: transform .2s ease-in-out;
+      
+      &::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 200%;
+        left: 0;
+      }
+    }
+    
+    &:hover span {
+      transform: translateY(-200%);
+      transition: transform .2s ease-in-out;
+    }
+  }
+
+  &__visit-site {
+    margin-top: 0.75rem;
+    text-decoration: underline;
+    color: $yellow-text;
+    font-size: 0.7rem;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
